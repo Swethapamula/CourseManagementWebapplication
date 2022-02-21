@@ -1,0 +1,86 @@
+<div class="container">
+
+  <section style="margin: 30px;">
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+
+        <div class="about-info shadow-lg p-3 mb-5 bg-dark rounded">
+          <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+            <h2 style="color:#00c6ff">
+              <marquee behavior="scroll" direction="left"> Explore Technologies and Create Better Outcome with hands-on
+                Experience</marquee>
+            </h2>
+
+          </div>
+
+          <div class="wow fadeInUp" data-wow-delay="0.4s">
+            <p style="color:white">We believe that you are the best person to shape your career.
+              For that reason, we use innovative educational approaches and give you more freedom to put together your
+              own course package than any other university.</p>
+            <p style="color:white"> Supported by your personal coach, you will enjoy building a solid foundation for a
+              career that perfectly
+              matches your skills and ambitions.
+            </p>
+            <p style="color:white">Studying with us is a great choice – high-quality education by highly qualified
+              mentors with low tuition
+              fees . We offer even more: thriving communities, excellent facilities,online Study materials,Campus
+              Recruitments. The best way to enjoy all these experiences is, of course, to signup here. For More info
+              Login /signup here
+
+            </p>
+            <a routerLink="/login" class="btn "><strong> Login</strong></a>
+            <a routerLink="/signup" class="btn "><strong> Signup</strong></a>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="caption">
+
+          <div class="col-md-12">
+            <ngb-carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" [interval]="12000"
+              [keyboard]="true" [pauseOnHover]="true" [wrap]="true" [activeId]="'secondSlide'">
+              <ng-template ngbSlide id="firstSlide">
+                <div class="picsum-img-wrapper">
+                  <img src="../../../assets/Images/ebooks.jpg" alt="Angular Carousel 1">
+                </div>
+                <div class="carousel-caption">
+                  <h3>Training and Development</h3>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide id="secondSlide">
+                <div class="picsum-img-wrapper">
+                  <img
+                    src="https://static8.depositphotos.com/1005669/1047/i/600/depositphotos_10470050-stock-photo-online-learning.jpg"
+                    alt="Angular Carousel 2">
+                </div>
+                <div class="carousel-caption">
+                  <h3>Weekend Training Sessions</h3>
+                </div>
+              </ng-template>
+
+              <ng-template ngbSlide id="ThirdSlide">
+                <div class="picsum-img-wrapper">
+                  <img src="https://nios.ac.in/images/online.jpg" alt="Angular Carousel 2">
+                </div>
+                <div class="carousel-caption">
+                  <h3>Highly Qualified Mentors</h3>
+                </div>
+              </ng-template>
+
+            </ngb-carousel>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>

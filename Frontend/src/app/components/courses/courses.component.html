@@ -1,0 +1,40 @@
+
+<section  class="first">
+    <div class="container">
+      
+          <div class="row">
+            <div class="col-12">
+                <h1 class ="head1">Courses Offered by us</h1>
+                <p class="text" style="padding-bottom: 20px; padding-left:10px"> 
+                   We are one of the largest learning platforms for education and skills training. It is a for-profit social enterprise dedicated to making it possible for anyone, to study anything, anywhere, at any time, for free online, at any subject level. Through our mission we are a catalyst for positive social change, creating opportunity, prosperity, and equality for everyone.
+                </p>
+            </div>
+          </div>
+        <div class="row">
+                <div class="col-md-4 box-item"  style ="padding:30px; 
+                display:flex;
+                justify-content: space-between;" 
+              *ngFor='let course of courses'>
+                    <div class="flip-card">
+
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <h1>{{course.coursename}}</h1>
+                         <img src={{course.image}} alt="image"style="width:250px;height:250px;" >
+                         </div>
+                         <div class="flip-card-back">
+                         <h1>{{course.coursename}}</h1> 
+                         <p>Duration: {{course.duration}}</p> 
+                          <p>Price: {{course.price}} INR</p>
+                          <p>{{course.details}}</p>
+                     </div>
+                   </div>
+                     </div>
+                </div>             
+
+            </div>
+          
+    
+    </div>
+ </section>
+

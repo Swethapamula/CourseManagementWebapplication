@@ -1,0 +1,25 @@
+button{
+
+  padding: 10px;
+  
+  margin: 0px;
+  
+  background-color: #03A9F4;
+  
+  border-radius: 100px;
+  
+  cursor: pointer;
+  
+  border: 0px;
+  
+  }
+
+  #toast-container > .toast-custom {
+    content: "\f00C";
+}
+
+/* this will set the toastr style */
+.toast-custom {
+    background-color: purple;
+}
+  

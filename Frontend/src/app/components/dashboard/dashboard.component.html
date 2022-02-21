@@ -1,0 +1,186 @@
+<section class="pb-0">
+    <div class="container-fluid">
+
+        <h1 class="h1"> Applications Dashboard</h1>
+        <div id="head" class="card mb-3">
+          <div class="card-body p-3">
+            <div class="row align-items-center gx-lg-5 gy-3">
+              <div class="col-lg-2 border-lg-end">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="ms-3">
+                      <h3 class="h6 text-gray-700 mb-0">
+                        Applicant Name
+                      </h3>
+    
+                      <!-- <small class="text-gray-500">{{ record.email }}</small> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 border-lg-end">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <!-- <img class="img-fluid shadow-sm" src="/assets/img/profile1.jpg" alt="..." width="50"> -->
+                    <div class="ms-3">
+                      <h3 class="h4 text-gray-700 mb-0">Qualification
+                      </h3>
+                      <h3 class="h6 text-gray-700 mb-0">
+                      </h3>
+    
+                      <!-- <small class="text-gray-500">
+                        </i> {{record.passout}} passout
+                      </small> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="ms-3">
+                      <h3 class="h6 text-gray-700 mb-0">
+                      Applied For </h3>
+    
+                      <small class="text-gray-500"></small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                        <div class="col-lg-2">
+                          <div class="d-flex align-items-center">               
+                               <div class="d-flex align-items-center">
+                              <div class="ms-3">
+                                <h3 class="h6 text-gray-700 mb-0">
+                                 Status </h3>
+              
+                                <small class="text-gray-500"></small>
+                              </div>
+                            </div>
+            
+                          </div>
+                          </div>
+    
+              <div class="col-lg-2">
+                <div class="d-flex align-items-center">
+                  <div style="height: 50px; margin-right: 5px; max-width: 15rem">
+                  </div>
+                  <div style="height: 50px; max-width: 15rem">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="container">
+            <pagination-controls
+              class="text-center"
+              (pageChange)="page = $event"
+              [autoHide]="true"
+              previousLabel="Previous"
+              nextLabel="Next"
+              [responsive]="true"
+            ></pagination-controls>
+          </div>
+      
+      <div id="box"class="card mb-3" 
+      id="box"
+      class="card mb-3"
+      *ngFor="
+      let record of studentData
+          | paginate
+            : {
+                itemsPerPage: 5,
+                currentPage: page,
+                totalItems: totalRecords
+              }
+      "
+
+
+
+      >
+
+
+        <div class="card-body p-3">
+          <div class="row align-items-center gx-lg-5 gy-3">
+            <div class="col-lg-2 border-lg-end">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <h3 class="h6 text-gray-700 mb-0">
+                    <a routerLink="/profile">  {{ record.name }}</a>
+                    </h3>
+  
+                    <small class="text-gray-500">{{ record.email }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 border-lg-end">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <h3 class="h6 text-gray-700 mb-0">
+                      {{ record.qualification}}
+                    </h3>
+  
+                    <small class="text-gray-500">
+                      {{record.passout}} 
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <h3 class="h6 text-gray-700 mb-0">
+                    {{record.courses}} </h3>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+                      <div class="col-lg-2">
+                        <div class="d-flex align-items-center">               
+                             <div class="d-flex align-items-center">
+                            <div class="ms-3">
+                              <h3 class="h6 text-gray-700 mb-0">
+                                {{record.status}} </h3>
+            
+                            </div>
+                          </div>
+          
+                        </div>
+                        </div>
+
+            <div class="col-lg-2">
+              <div class="d-flex align-items-center">
+                <div style="height: 50px; margin-right: 5px; max-width: 15rem">
+                  <button
+                    id="btn"
+                    type="submit"
+                    name="approve"
+                    (click)="approve(record)"
+                  >
+                    <h6 style="color: white;font-size:12px;margin:auto">APPROVE</h6>
+                  </button>
+                </div>
+                <div style="height: 50px; max-width: 15rem">
+                  <button
+                    id="btn"
+                    type="submit"
+                    name="reject"
+                    (click)="reject(record)"
+                  >
+                    <h6 style="color: white;font-size:12px;margin:auto">REJECT</h6>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

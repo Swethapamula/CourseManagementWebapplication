@@ -1,0 +1,44 @@
+<div class="container">
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+    </div>
+    <form [formGroup]="coursesForm"  #addcoursesForm='ngForm' (ngSubmit)="addCourses()">
+        <h3>Add new Courses</h3>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="coursename" class="form-control" formControlName="coursename" placeholder="Course Name *" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="code" class="form-control" placeholder="Code *" formControlName="code"  required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="duration" class="form-control" placeholder="Duration *" formControlName="duration"  required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="price" class="form-control" placeholder="Price *" formControlName="price" required/>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="image" class="form-control" placeholder="Image *"  formControlName="image"  required/>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="details" class="form-control" placeholder="Course Details " style="width: 100%; height: 150px;" formControlName="details"></textarea>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="col-12" >
+            <div class="form-group">
+                <button type="submit" class="btn btnContact" [disabled]='coursesForm.invalid && addcoursesForm.form.invalid'>Add Course</button>
+            </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="wrapper">
+  
+    <div class="text-center mt-4 name"> Sign In</div>
+    <form class="p-3" [formGroup]="LoginController"  #loginForm='ngForm' (ngSubmit)="loginUser()">
+        <div class="form-field d-flex align-items-center">
+            <input type="text" name="email" formControlName='email'placeholder="Email">
+         </div>
+
+        <div>
+            <span style="color: red;" 
+            *ngIf="email && email.invalid && (email.dirty || email.touched)">
+            Email is not valid</span>
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+             <input type="password"
+                name="password" formControlName='password' placeholder="Password"> 
+        </div> 
+        <div >
+             <span style="color: red;" *ngIf="password && password.invalid && (password.dirty || password.touched)">Password should have one Uppercase, one Lowecase and one number, should contain atleast 8 characters</span><br/>
+ 
+         </div> 
+                        
+                <button class="btn mt-3"[disabled]='loginForm.form.invalid && LoginController.invalid'>Login</button>
+                <span>
+                    <span style="color: red; margin-top: -2%;" >{{errorMessage}}</span>
+                </span>
+    </form>
+    <div class="text-center fs-6"> New users <a routerLink="/signup"><b>Sign up</b></a> here </div>
+</div>
